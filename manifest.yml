@@ -1,0 +1,14 @@
+---
+applications:
+- name: rhine
+  instances: 1
+  memory: 512MB
+  buildpack: https://github.com/cloudfoundry/nodejs-buildpack.git
+  command: ./entrypoint-cf.sh
+
+  services:
+  - database
+  - mailgun
+
+  env:
+    NODE_ENV: production
