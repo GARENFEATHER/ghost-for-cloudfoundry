@@ -9,6 +9,10 @@ applications:
   services:
   - database
   - mailgun
+  
+  routes:
+  - route: ghost.garenfeather.cn
 
   env:
     NODE_ENV: production
+    url: https://ghost.garenfeather.cn
