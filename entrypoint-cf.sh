@@ -5,7 +5,6 @@ set -e -u
 # App URL
 app_uri="$(echo "${VCAP_APPLICATION}" | jq -r '.application_uris[0] // ""')"
 app_url="https://${app_uri}"
-app_eternal_url="https://ghost.garenfeather.cn"
 
 # Database
 db_credentials="$(echo "${VCAP_SERVICES}" | jq -r '.["cleardb"][0].credentials // ""')"
@@ -31,7 +30,7 @@ email_password="$(echo "${email_credentials}" | jq -r '.password // ""')"
 
 # Create config file
 jq -n "{
-    url: \"${app_eternal_url}\",
+    url: \"${app_url}\",
     mail: {
         transport: \"SMTP\",
         options: {
