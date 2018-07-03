@@ -15,4 +15,3 @@ applications:
 
   env:
     NODE_ENV: production
-    url: https://ghost.garenfeather.cn
